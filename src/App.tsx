@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { useSetAtom, atom } from "jotai";
+import { atom } from "jotai";
 import { BrowserRouter as Router, Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import DetailView from "./DetailView";

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { atom, useAtom, useSetAtom } from "jotai"; // Import useSetAtom
 import { BrowserRouter as Router, Routes, useNavigate } from "react-router-dom";
 
 type DataType = {
@@ -10,14 +9,10 @@ type DataType = {
   body: string;
 };
 
-export const detailData = atom<DataType | undefined>(undefined); // Initial value is undefined
-
 function Home() {
   const [search, setSearch] = useState("");
   const [data, setData] = useState<DataType[]>([]);
-  const [dataDetailState, setDetailData] = useAtom(detailData); // Use useSetAtom to set the atom
   const navigate = useNavigate();
-  console.log(dataDetailState);
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
