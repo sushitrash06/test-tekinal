@@ -16,17 +16,6 @@ type DataType = {
 export const detailData = atom<DataType>();
 
 function App() {
-  const [search, setSearch] = useState("");
-  const [data, setData] = useState<DataType[]>([]);
-  const [dataDetail, setDataDetail] = useState<DataType>();
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => response.json())
-      .then((data: DataType[]) => {
-        setData(data);
-      });
-  }, []);
-  console.log(dataDetail);
   return (
     <div>
       <Router>
